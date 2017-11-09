@@ -1,4 +1,4 @@
-﻿Function New-CFConfig {
+﻿Function New-TDevConfig {
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory = $True, HelpMessage = 'Client key on https://dev.telstra.com/user/me/apps')]
@@ -18,7 +18,7 @@
 
     Begin {
         $TDevConfDir = Split-Path -Path "$Path"
-        If (-not (Test-Path -Path "$TDevFConfDir")) {
+        If (-not (Test-Path -Path "$TDevConfDir")) {
             New-Item "$TDevConfDir" -ItemType Directory | Out-Null
             Write-Verbose -Message "Creating folder $TDevConfDir"
         }
