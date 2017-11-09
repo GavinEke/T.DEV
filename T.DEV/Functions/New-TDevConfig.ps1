@@ -25,7 +25,7 @@
     }
 
     Process {
-        $TDevConfigurationFile = @{ConsumerKey = $ClientKey; ConsumerSecret = $ClientSecret}
+        $TDevConfigurationFile = @{ConsumerKey = $ClientKey; ConsumerSecret = $ClientSecret; GrantType = 'client_credentials'; Scope = 'NSMS'}
         $TDevConfigurationFile | Export-Clixml -Path "$Path" -Force
         Write-Verbose -Message "TDevConfigurationFile has been written to $Path"
     }

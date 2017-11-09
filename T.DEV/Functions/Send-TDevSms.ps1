@@ -18,10 +18,6 @@
         If ($ConfigImported) {
             Try {
                 $Uri = "$BaseUri/sms"
-                $headers = @{
-                    'Authorization' = "$AccessToken";
-                    'Content-Type' = 'application/json'
-                }
                 $json = @{
                     'to' = $To;
                     'body' = $Message

@@ -10,11 +10,6 @@ Function New-TDevNumber {
         If ($ConfigImported) {
             Try {
                 $Uri = "$BaseUri/provisioning/subscriptions"
-                $headers = @{
-                    'Authorization' = $AccessToken;
-                    'Cache-Control' = 'no-cache';
-                    'Content-Type' = 'application/json'
-                }
                 $json = @{
                     'activeDays' = 30;
                     'notifyURL' = "http://example.com/callback";
