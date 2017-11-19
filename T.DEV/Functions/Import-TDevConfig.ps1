@@ -18,7 +18,7 @@
                 
                 $Uri = 'https://sapi.telstra.com/v1/oauth/token'
                 $headers = @{'Content-Type' = 'application/x-www-form-urlencoded'}
-                $body = 'grant_type={0}&client_id={1}&client_secret={2}&scope={3}' -f $HPWCConfigurationFile.GrantType, $TDevConfigurationFile.ConsumerKey, $TDevConfigurationFile.ConsumerSecret, $HPWCConfigurationFile.Scope
+                $body = 'grant_type={0}&client_id={1}&client_secret={2}&scope={3}' -f $TDevConfigurationFile.GrantType, $TDevConfigurationFile.ConsumerKey, $TDevConfigurationFile.ConsumerSecret, $TDevConfigurationFile.Scope
                 $Response = Invoke-RestMethod -Method Post -Uri $Uri -Headers $headers -Body $body
 
                 $Script:BaseUri = 'https://tapi.telstra.com/v2/messages'
