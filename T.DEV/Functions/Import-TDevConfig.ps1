@@ -14,7 +14,7 @@
             Write-Verbose -Message "TDevConfigurationFile has been loaded from $Path"
 
             Try {
-                [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+                If ($PSVersionTable.PSEdition -ne 'Core') { [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 }
                 
                 $Uri = 'https://sapi.telstra.com/v1/oauth/token'
                 $headers = @{'Content-Type' = 'application/x-www-form-urlencoded'}
